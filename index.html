@@ -1,31 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Updated GitHub Website</title>
+    <title>Muhammad Ismail – Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            padding: 20px;
+            margin: 0;
+            background: #f4f4f4;
+            color: #333;
         }
-        h1 {
-            color: #0070ff;
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
-        .box {
-            padding: 20px;
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+        header h2 {
+            font-weight: normal;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        section {
             background: white;
+            padding: 20px 25px;
+            margin-bottom: 20px;
             border-radius: 10px;
-            width: 400px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        h3 {
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: #111;
+        }
+        ul { margin-left: 18px; }
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .chip {
+            padding: 6px 12px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Welcome Back!</h1>
-        <p>This is the updated version of my GitHub Pages website.</p>
-        <p>Changes appear instantly after I push them 🎉</p>
-    </div>
+
+<header>
+    <h1>Muhammad Ismail</h1>
+    <h2>Interpreter (English–Urdu/Pashto)</h2>
+    <p>Dedicated professional with strong linguistic ability, cultural understanding, and excellent communication skills.</p>
+</header>
+
+<main>
+
+    <section>
+        <h3>Profile</h3>
+        <p>
+            Experienced English–Urdu/Pashto interpreter working across healthcare, legal, and government settings, 
+            delivering accurate and culturally sensitive language support. Skilled in communication, 
+            interpersonal interaction, and adapting to diverse environments. Passionate about technology 
+            and continuous learning, with strong ICT capabilities. 
+        </p>
+    </section>
+
+    <section>
+        <h3>Contact Information</h3>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:ismail8t5@gmail.com">ismail8t5@gmail.com</a></li>
+            <li><strong>Phone:</strong> +44 7541503090</li>
+            <li><strong>Address:</strong> 126 Hermitage Road, Loughborough, United Kingdom</li>
+            <li><strong>Nationality:</strong> Pakistani</li>
+            <li><strong>Date of Birth:</strong> 01/02/1985</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Work Experience</h3>
+
+        <div>
+            <h4>Interpreter (English–Urdu/Pashto) – Talking Heads</h4>
+            <p><em>Jan 2023 – Present · Derby, UK</em></p>
+            <ul>
+                <li>Fluent in English, Urdu, and Pashto, providing accurate interpretation services.</li>
+                <li>Skilled at bridging cultural differences in sensitive environments.</li>
+                <li>Experience in healthcare, legal, and government settings.</li>
+                <li>Committed to professionalism, confidentiality, and culturally sensitive communication.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section>
+        <h3>Education</h3>
+        <p><strong>BSc Electrical Engineering</strong> – UET Peshawar, Kohat Campus (2004–2008)</p>
+        <p>Kohat, Pakistan</p>
+        <p><a href="http://www.uetpeshawar.edu.pk" target="_blank">www.uetpeshawar.edu.pk</a></p>
+    </section>
+
+    <section>
+        <h3>Language Skills</h3>
+        <ul>
+            <li><strong>Pashto:</strong> Native</li>
+            <li><strong>Urdu:</strong> C2 – Proficient</li>
+            <li><strong>English:</strong> B2 – Independent User</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>ICT Skills</h3>
+        <p>
+            Strong ICT skills with ability to quickly learn new software. Experienced in a wide range 
+            of applications and committed to staying updated with new technologies. Quick learner with 
+            strong technical aptitude.
+        </p>
+    </section>
+
+    <section>
+        <h3>Communication & Interpersonal Skills</h3>
+        <p>
+            Skilled communicator with experience handling diverse audiences. Strong listening, 
+            presentation, and interpersonal abilities developed through professional interactions 
+            in interpreting roles.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    © <span id="year"></span> Muhammad Ismail — All rights reserved.
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
