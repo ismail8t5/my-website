@@ -4,525 +4,135 @@
     <meta charset="UTF-8">
     <title>Muhammad Ismail – Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg: #0b1220;
-            --bg-soft: #020617;
-            --accent: #2563eb;
-            --accent-soft: rgba(37, 99, 235, 0.12);
-            --text-main: #0f172a;
-            --text-muted: #6b7280;
-            --card-bg: #ffffff;
-            --border-subtle: #e5e7eb;
-            --radius-lg: 16px;
-            --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #1e293b 0, #020617 50%, #020617 100%);
-            color: var(--text-main);
-        }
-
-        /* ===== Layout ===== */
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1d4ed8 100%);
-            color: white;
-            padding: 24px 16px 36px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 10% -10%, rgba(56,189,248,0.25), transparent 55%),
-                radial-gradient(circle at 90% 0%, rgba(129,140,248,0.35), transparent 55%);
-            opacity: 0.9;
-            pointer-events: none;
-        }
-
-        .header-inner {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        /* ===== Top Nav ===== */
-
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-            font-size: 0.9rem;
-            opacity: 0.95;
-        }
-
-        .top-nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            padding-bottom: 2px;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s, color 0.2s, opacity 0.2s;
-        }
-
-        .top-nav a:hover {
-            color: #ffffff;
-            border-color: rgba(248, 250, 252, 0.7);
-            opacity: 1;
-        }
-
-        /* ===== Hero ===== */
-
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .avatar {
-            width: 84px;
-            height: 84px;
-            border-radius: 999px;
-            background: radial-gradient(circle at 30% 30%, #bfdbfe 0, #1d4ed8 50%, #020617 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.55);
-            border: 1px solid rgba(248, 250, 252, 0.35);
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 230px;
-        }
-
-        .hero-title {
-            margin: 0;
-            font-size: clamp(2rem, 3vw, 2.4rem);
-            letter-spacing: -0.03em;
-        }
-
-        .hero-subtitle {
-            margin: 6px 0 10px;
-            font-weight: 500;
-            font-size: 1.05rem;
-            opacity: 0.96;
-        }
-
-        .hero-tagline {
-            margin: 0;
-            max-width: 520px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #e5e7eb;
-            opacity: 0.95;
-        }
-
-        .hero-actions {
-            margin-top: 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.15s, border-color 0.15s;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #0f172a;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 16px 28px rgba(15, 23, 42, 0.5);
-        }
-
-        .btn-ghost {
-            background: rgba(15, 23, 42, 0.2);
-            color: #e5e7eb;
-            border-color: rgba(148, 163, 184, 0.5);
-        }
-
-        .btn-ghost:hover {
-            background: rgba(15, 23, 42, 0.5);
-            transform: translateY(-1px);
-        }
-
-        /* ===== Main content ===== */
-
-        main {
-            flex: 1;
-            max-width: 1000px;
-            margin: -26px auto 40px;
-            padding: 0 16px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .grid {
-            display: grid;
-            gap: 18px;
-        }
-
-        @media (min-width: 880px) {
-            .grid {
-                grid-template-columns: 1.6fr 1.1fr;
-                align-items: flex-start;
-            }
-        }
-
-        section {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: var(--radius-lg);
-            padding: 20px 22px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            color: #e5e7eb;
-        }
-
-        section h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: #bfdbfe;
-        }
-
-        section p,
-        section li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #e5e7eb;
-        }
-
-        section p + p {
-            margin-top: 6px;
-        }
-
-        ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        /* ===== Extra styling for specific blocks ===== */
-
-        .badge-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .badge {
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(15,23,42,0.85);
-            border: 1px solid rgba(148, 163, 184, 0.6);
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #cbd5f5;
-        }
-
-        .contact-list li {
-            margin-bottom: 6px;
-        }
-
-        .contact a {
-            color: #93c5fd;
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(147, 197, 253, 0.5);
-            padding-bottom: 2px;
-            transition: color 0.15s, border-color 0.15s;
-        }
-
-        .contact a:hover {
-            color: #e5e7eb;
-            border-color: rgba(248, 250, 252, 0.8);
-        }
-
-        .job-title {
-            font-weight: 600;
-        }
-
-        .job-meta {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            margin-bottom: 5px;
-        }
-
-        .lang-list li {
-            margin-bottom: 4px;
-        }
-
-        .lang-level {
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #9ca3af;
-        }
-
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .pill {
-            padding: 5px 11px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.5);
-            font-size: 0.8rem;
-            color: #e5e7eb;
-            background: rgba(15, 23, 42, 0.8);
-        }
-
-        /* ===== Animation ===== */
-
-        .animate-in {
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeUp 0.6s ease-out forwards;
-        }
-
-        section:nth-of-type(1).animate-in { animation-delay: 0.05s; }
-        section:nth-of-type(2).animate-in { animation-delay: 0.12s; }
-        section:nth-of-type(3).animate-in { animation-delay: 0.18s; }
-        section:nth-of-type(4).animate-in { animation-delay: 0.24s; }
-        section:nth-of-type(5).animate-in { animation-delay: 0.30s; }
-        section:nth-of-type(6).animate-in { animation-delay: 0.36s; }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== Footer ===== */
-
-        footer {
-            text-align: center;
-            padding: 16px 10px 26px;
-            font-size: 0.8rem;
-            color: #9ca3af;
-        }
-
-        footer span {
-            color: #e5e7eb;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="page">
-
-    <header id="top">
-        <div class="header-inner">
-
-            <nav class="top-nav">
-                <a href="#profile">Profile</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
+    <header>
+        <div class="bar">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">MI</span>
+                <span>Muhammad Ismail</span>
+            </a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="contact.html">Contact</a>
             </nav>
-
-            <div class="hero">
-                <div class="avatar">MI</div>
-
-                <div class="hero-text">
-                    <h1 class="hero-title">Muhammad Ismail</h1>
-                    <h2 class="hero-subtitle">Interpreter · English – Urdu – Pashto</h2>
-                    <p class="hero-tagline">
-                        Dedicated interpreter with strong linguistic ability, cultural understanding and
-                        excellent communication—supporting clients in healthcare, legal and government environments.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="mailto:ismail8t5@gmail.com">
-                            📩 Contact Me
-                        </a>
-                        <!-- Update this link if you have a PDF CV -->
-                        <a class="btn btn-ghost" href="#experience">
-                            📄 View Experience
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </header>
 
-    <main>
-        <div class="grid">
-            <!-- Left column -->
-            <div class="left-col">
-                <section id="profile" class="animate-in">
-                    <h3>Profile</h3>
-                    <p>
-                        Experienced English–Urdu/Pashto interpreter working across healthcare, legal and government
-                        settings, delivering accurate and culturally sensitive language support.
-                    </p>
-                    <p>
-                        Skilled in client-facing communication, interpersonal interaction and adapting to diverse
-                        environments. Passionate about technology and continuous learning, with strong ICT capabilities.
-                    </p>
-
-                    <div class="badge-row">
-                        <div class="badge">Healthcare</div>
-                        <div class="badge">Legal</div>
-                        <div class="badge">Government</div>
-                        <div class="badge">Remote & On-Site</div>
+    <main class="content">
+        <section class="hero">
+            <div>
+                <div class="stacked">
+                    <div class="avatar">MI</div>
+                    <div class="text">
+                        <h1>Muhammad Ismail</h1>
+                        <div class="subtitle">Interpreter · English · Urdu · Pashto</div>
+                        <p class="tagline">
+                            Accurate, calm, and culturally aware interpreter supporting clients in healthcare, legal,
+                            and government settings. Remote and on-site, with strong ICT skills and tech curiosity.
+                        </p>
                     </div>
-                </section>
-
-                <section id="experience" class="animate-in">
-                    <h3>Work Experience</h3>
-
-                    <div>
-                        <p class="job-title">Interpreter (English – Urdu/Pashto) · Talking Heads</p>
-                        <p class="job-meta">Jan 2023 – Present · Derby, United Kingdom</p>
-                        <ul>
-                            <li>Provide accurate interpretation services in English, Urdu and Pashto for a range of clients.</li>
-                            <li>Bridge cultural differences and support sensitive conversations with empathy and professionalism.</li>
-                            <li>Experience working in healthcare, legal and government environments.</li>
-                            <li>Committed to confidentiality, impartiality and culturally sensitive communication.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="skills-communication" class="animate-in">
-                    <h3>Communication & Interpersonal Skills</h3>
-                    <p>
-                        Skilled communicator with experience supporting diverse audiences, including vulnerable service users
-                        and professionals in high-stakes settings.
-                    </p>
-                    <ul>
-                        <li>Active listening and accurate message transfer between parties.</li>
-                        <li>Clear, neutral and professional communication style.</li>
-                        <li>Ability to build rapport quickly while maintaining boundaries.</li>
-                    </ul>
-                </section>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-primary" href="mailto:ismail8t5@gmail.com">📩 Contact Me</a>
+                    <a class="btn btn-ghost" href="experience.html">📄 View Experience</a>
+                </div>
             </div>
 
-            <!-- Right column -->
-            <div class="right-col">
-                <section id="contact" class="animate-in contact">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-list">
-                        <li><strong>Email:</strong> <a href="mailto:ismail8t5@gmail.com">ismail8t5@gmail.com</a></li>
-                        <li><strong>Phone (UK):</strong> +44 7541 503090</li>
-                        <li><strong>Location:</strong> Derby, United Kingdom</li>
-                        <li><strong>Nationality:</strong> Pakistani</li>
-                    </ul>
-                </section>
+            <div>
+                <div class="pill">Based in Derby, United Kingdom</div>
+                <div class="pill">Healthcare · Legal · Government</div>
+                <div class="pill">Remote & On-Site</div>
+                <div class="chips">
+                    <span class="chip">Sight Translation</span>
+                    <span class="chip">Consecutive</span>
+                    <span class="chip">Telephone & Video</span>
+                    <span class="chip">Client-facing</span>
+                    <span class="chip">Tech-forward</span>
+                </div>
+            </div>
+        </section>
 
-                <section id="education" class="animate-in">
-                    <h3>Education</h3>
-                    <p><strong>BSc Electrical Engineering</strong></p>
-                    <p>UET Peshawar, Kohat Campus · 2004 – 2008 · Kohat, Pakistan</p>
-                    <p>
-                        <a href="http://www.uetpeshawar.edu.pk" target="_blank" rel="noopener noreferrer">
-                            www.uetpeshawar.edu.pk
-                        </a>
-                    </p>
-                </section>
-
-                <section id="languages" class="animate-in">
-                    <h3>Language Skills</h3>
-                    <ul class="lang-list">
-                        <li>
-                            <strong>Pashto:</strong> Native
-                            <div class="lang-level">Native Speaker</div>
-                        </li>
-                        <li>
-                            <strong>Urdu:</strong> C2
-                            <div class="lang-level">Full Professional Proficiency</div>
-                        </li>
-                        <li>
-                            <strong>English:</strong> B2
-                            <div class="lang-level">Independent User</div>
-                        </li>
-                    </ul>
-
-                    <div class="pill-row">
-                        <div class="pill">Sight Translation</div>
-                        <div class="pill">Consecutive Interpreting</div>
-                        <div class="pill">Telephone & Video</div>
-                    </div>
-                </section>
-
-                <section id="ict" class="animate-in">
-                    <h3>ICT & Technical Skills</h3>
-                    <p>
-                        Strong ICT skills with the ability to quickly learn new software and tools. Experienced with
-                        common office applications and remote interpreting platforms.
-                    </p>
-                    <div class="pill-row">
-                        <div class="pill">Microsoft Office</div>
-                        <div class="pill">Online Meeting Platforms</div>
-                        <div class="pill">Remote Interpreting Tools</div>
-                        <div class="pill">General IT Literacy</div>
-                    </div>
-                </section>
+        <div class="panel-grid">
+            <div class="panel">
+                <h3>Profile</h3>
+                <p>Reliable interpreter across English, Urdu, and Pashto. Calm under pressure, empathetic, and focused on
+                    accurate message transfer.</p>
+                <a class="link" href="contact.html">Get in touch →</a>
+            </div>
+            <div class="panel">
+                <h3>Experience</h3>
+                <p>Talking Heads · Jan 2023 – Present · Derby, UK<br>Supporting sensitive conversations in healthcare, legal,
+                    and government environments.</p>
+                <a class="link" href="experience.html">See work history →</a>
+            </div>
+            <div class="panel">
+                <h3>Education</h3>
+                <p>BSc Electrical Engineering · UET Peshawar (Kohat Campus)<br>2004 – 2008.</p>
+                <a class="link" href="education.html">Education & certificates →</a>
+            </div>
+            <div class="panel">
+                <h3>Languages</h3>
+                <p>Pashto (Native), Urdu (C2), English (B2). Cultural bridge across audiences.</p>
+                <a class="link" href="contact.html">Language services →</a>
             </div>
         </div>
+
+        <section class="section">
+            <h2>Quick Highlights</h2>
+            <div class="panel-grid">
+                <div class="panel">
+                    <div class="card">
+                        <div class="card-title">Communication & Interpersonal</div>
+                        <div class="card-desc">
+                            Active listener with clear, neutral tone. Builds rapport quickly while respecting boundaries
+                            and confidentiality.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="card">
+                        <div class="card-title">ICT & Technical</div>
+                        <div class="card-desc">
+                            Comfortable with remote interpreting tools, online meeting platforms, and office software.
+                            Picks up new tools fast.
+                        </div>
+                        <div class="chips">
+                            <span class="chip">Remote Platforms</span>
+                            <span class="chip">Office Suite</span>
+                            <span class="chip">Modern IT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="card">
+                        <div class="card-title">Working Modes</div>
+                        <div class="card-desc">
+                            On-site and remote, with experience in healthcare, legal, and government conversations.
+                        </div>
+                        <div class="chips">
+                            <span class="chip">Healthcare</span>
+                            <span class="chip">Legal</span>
+                            <span class="chip">Government</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        © <span id="year"></span> <span>Muhammad Ismail</span> — All rights reserved.
+        © <span id="year"></span> Muhammad Ismail — All rights reserved.
     </footer>
 </div>
-
 <script>
-    // dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
